@@ -1,0 +1,295 @@
+{
+    "info": {
+        "_postman_id": "c7f8c4a1-b4a1-4b1a-9a4a-1a2b3c4d5e6f",
+        "name": "TravelTV API",
+        "description": "API Collection for Entertainment Discovery App",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Auth",
+            "item": [
+                {
+                    "name": "Register Admin",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"admin@example.com\",\n    \"password\": \"password123\",\n    \"role\": \"hotel_admin\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{API_URL}}/api/auth/register",
+                            "host": [
+                                "{{API_URL}}"
+                            ],
+                            "path": [
+                                "api",
+                                "auth",
+                                "register"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Login Admin",
+                    "event": [
+                        {
+                            "listen": "test",
+                            "script": {
+                                "exec": [
+                                    "var jsonData = pm.response.json();",
+                                    "pm.environment.set(\"token\", jsonData.token);"
+                                ],
+                                "type": "text/javascript"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"email\": \"admin@example.com\",\n    \"password\": \"password123\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{API_URL}}/api/auth/login",
+                            "host": [
+                                "{{API_URL}}"
+                            ],
+                            "path": [
+                                "api",
+                                "auth",
+                                "login"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Admin Actions",
+            "item": [
+                {
+                    "name": "Create Hotel",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Grand Plaza\",\n    \"location\": \"London\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{API_URL}}/api/admin/hotel",
+                            "host": [
+                                "{{API_URL}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "hotel"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Channel",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"BBC One\",\n    \"channelNumber\": 101,\n    \"category\": \"News\",\n    \"hotelId\": \"<HOTEL_ID>\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{API_URL}}/api/admin/channel",
+                            "host": [
+                                "{{API_URL}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "channel"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Streaming Service",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{token}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"name\": \"Netflix\",\n    \"availableCountries\": [\"US\", \"UK\", \"FR\"]\n}"
+                        },
+                        "url": {
+                            "raw": "{{API_URL}}/api/admin/streaming",
+                            "host": [
+                                "{{API_URL}}"
+                            ],
+                            "path": [
+                                "api",
+                                "admin",
+                                "streaming"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Public API",
+            "item": [
+                {
+                    "name": "Get Hotels",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{API_URL}}/api/hotels",
+                            "host": [
+                                "{{API_URL}}"
+                            ],
+                            "path": [
+                                "api",
+                                "hotels"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Hotel Details",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{API_URL}}/api/hotels/<HOTEL_ID>",
+                            "host": [
+                                "{{API_URL}}"
+                            ],
+                            "path": [
+                                "api",
+                                "hotels",
+                                "<HOTEL_ID>"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Search Channels",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{API_URL}}/api/search?q=Sports",
+                            "host": [
+                                "{{API_URL}}"
+                            ],
+                            "path": [
+                                "api",
+                                "search"
+                            ],
+                            "query": [
+                                {
+                                    "key": "q",
+                                    "value": "Sports"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Global Streaming",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{API_URL}}/api/streaming/global",
+                            "host": [
+                                "{{API_URL}}"
+                            ],
+                            "path": [
+                                "api",
+                                "streaming",
+                                "global"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Streaming by Country",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{API_URL}}/api/streaming/UK",
+                            "host": [
+                                "{{API_URL}}"
+                            ],
+                            "path": [
+                                "api",
+                                "streaming",
+                                "UK"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ],
+    "variable": [
+        {
+            "key": "API_URL",
+            "value": "http://localhost:5000",
+            "type": "string"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+Starting script...
+Connecting to mongodb://127.0.0.1:27017/entertainment_discovery_app
+Connected.
+Found 1 channels.
+ERROR: Channel validation failed: channelNumber: Path `channelNumber` is required.
+ValidationError: Channel validation failed: channelNumber: Path `channelNumber` is required.
+    at Document.invalidate (C:\Users\rjaiswal\Desktop\Travell Watch\entertainment-discovery-app\backend\node_modules\mongoose\lib\document.js:3379:32)
+    at validatePath (C:\Users\rjaiswal\Desktop\Travell Watch\entertainment-discovery-app\backend\node_modules\mongoose\lib\document.js:3154:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Promise.all (index 0)
+    at async model.$__validate (C:\Users\rjaiswal\Desktop\Travell Watch\entertainment-discovery-app\backend\node_modules\mongoose\lib\document.js:3095:3)
+    at async model.validate (C:\Users\rjaiswal\Desktop\Travell Watch\entertainment-discovery-app\backend\node_modules\mongoose\lib\document.js:2672:5)
+    at async model.validateBeforeSave (C:\Users\rjaiswal\Desktop\Travell Watch\entertainment-discovery-app\backend\node_modules\mongoose\lib\plugins\validateBeforeSave.js:34:7)
+    at async Kareem.execPre (C:\Users\rjaiswal\Desktop\Travell Watch\entertainment-discovery-app\backend\node_modules\kareem\index.js:65:24)
+    at async model.$__save (C:\Users\rjaiswal\Desktop\Travell Watch\entertainment-discovery-app\backend\node_modules\mongoose\lib\model.js:369:5)
+    at async model.save (C:\Users\rjaiswal\Desktop\Travell Watch\entertainment-discovery-app\backend\node_modules\mongoose\lib\model.js:609:5)
+Starting script...
+Connecting to mongodb://127.0.0.1:27017/entertainment_discovery_app
+Connected.
+Found 1 channels.
+Updated channel: Star Gold
+Title: Update Complete. Updated 1 channels.

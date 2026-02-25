@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Custom Scrollbar Styles */
+.scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-800 rounded;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-700 rounded hover:bg-gray-600 transition;
+}
+
+/* Firefox Scrollbar */
+.scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #374151 #1f2937;
+}
