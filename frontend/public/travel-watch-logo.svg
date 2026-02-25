@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="96" fill="url(#bgGradient)" />
+  
+  <!-- Globe grid lines (travel theme) -->
+  <ellipse cx="100" cy="100" rx="60" ry="60" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" fill="none"/>
+  <ellipse cx="100" cy="100" rx="40" ry="60" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" fill="none"/>
+  <ellipse cx="100" cy="100" rx="20" ry="60" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" fill="none"/>
+  <line x1="40" y1="100" x2="160" y2="100" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+  <line x1="45" y1="75" x2="155" y2="75" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+  <line x1="45" y1="125" x2="155" y2="125" stroke="rgba(255,255,255,0.18)" stroke-width="1.2"/>
+
+  <!-- Play button / watch symbol (center) -->
+  <circle cx="100" cy="100" r="28" fill="rgba(255,255,255,0.18)" stroke="white" stroke-width="2"/>
+  <polygon points="93,88 118,100 93,112" fill="white"/>
+
+  <!-- Airplane accent (top-right) -->
+  <g transform="translate(142, 48) rotate(-30)">
+    <ellipse cx="0" cy="0" rx="14" ry="5" fill="white" opacity="0.9"/>
+    <ellipse cx="-6" cy="2" rx="8" ry="3" fill="white" opacity="0.8"/>
+    <polygon points="13,0 8,-8 7,0" fill="white" opacity="0.9"/>
+    <polygon points="-10,2 -14,7 -6,4" fill="white" opacity="0.8"/>
+  </g>
+
+  <defs>
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+  </defs>
+</svg>
